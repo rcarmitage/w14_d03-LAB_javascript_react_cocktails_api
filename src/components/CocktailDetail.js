@@ -4,13 +4,12 @@ import React from 'react';
 
 const CocktailDetail = (props) => {
 
-  const ingredients = []
-
-  const addIngredient= function(cocktail){
-    if (props.cocktail.strIngredient1.value != null) {return ingredients.push(cocktail)}
-
-}
-
+//   const ingredients = []
+//
+//   const addIngredient= function(cocktail){
+//     if (props.cocktail.strIngredient1.value != null) {return ingredients.push(cocktail)}
+//
+// }
 
   if (!props.cocktail) return null;
   return (

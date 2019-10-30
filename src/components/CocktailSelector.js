@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const CocktailSelector = (props) => {
   const options = props.cocktails.map((cocktail, index) => {
