@@ -3,7 +3,11 @@ import React from 'react';
 const CocktailDetail = (props) => {
   if (!props.cocktail) return null;
   return (
-    <h3>{props.cocktail.strDrink}</h3>
+    <div>
+      <h3>{props.cocktail.strDrink}</h3>
+      <img src={props.cocktail.strDrinkThumb} height="200"/>
+      <p>{props.cocktail.strInstructions}</p>
+    </div>
   )
 }
 
