@@ -15,6 +15,7 @@ class CocktailsContainer extends Component{
     this.handleCocktailSelected = this.handleCocktailSelected.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.handleFavouriteSelected = this.handleFavouriteSelected.bind(this)
   }
 
   componentDidMount(){
@@ -29,12 +30,15 @@ class CocktailsContainer extends Component{
       .then(data =>this.setState({ currentCocktail: data.drinks[0] }))
   }
   handleDelete(cocktail) {
-    console.log('cocktail', cocktail)
     const index = this.state.favouriteCocktails.indexOf(cocktail)
     const before = this.state.favouriteCocktails.slice(0, index)
     const after = this.state.favouriteCocktails.slice(index+1, this.state.favouriteCocktails.length)
     const newArray = [...before, ...after]
     this.setState({favouriteCocktails: newArray})
+  }
+
+  handleFavouriteSelected(cocktail){
+    this.setState({currentCocktail: cocktail})
   }
 
   handleButtonClick(){
@@ -55,7 +59,7 @@ class CocktailsContainer extends Component{
         </div>
         <button onClick={this.handleButtonClick}>Add to Favourites</button>
         <div>
-          <FavouriteCocktails onDeleteClick={this.handleDelete} favouriteCocktails={this.state.favouriteCocktails} />
+          <FavouriteCocktails onFavouriteSelected = {this.handleFavouriteSelected} onDeleteClick={this.handleDelete} favouriteCocktails={this.state.favouriteCocktails} />
         </div>
       </div>
     )

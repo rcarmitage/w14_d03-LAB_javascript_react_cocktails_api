@@ -9,10 +9,14 @@ const FavouriteCocktails = (props) => {
       props.onDeleteClick(cocktail)
     }
 
+    function handleClickChange() {
+      props.onFavouriteSelected(cocktail);
+    }
+
     return(
-      <li key={index}>
-      <p>{cocktail.strDrink}</p>
-      <button onClick={handleClick}>Delete Cocktail</button>
+      <li id="favourites-list" key={index}>
+        <p onClick={handleClickChange}>{cocktail.strDrink}<button onClick={handleClick}>Delete Cocktail</button></p>
+
       </li>
     )
   })

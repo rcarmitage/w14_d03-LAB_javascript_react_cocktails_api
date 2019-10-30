@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: beige;
+  color: firebrick;
 }
 
 .App-logo {
@@ -19,4 +21,29 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+li {
+  list-style-type: none;
+}
+
+#favourites-list {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-style: dashed;
+  border-width: 1px;
+}
+
+button {
+  color: blue;
+  background-color: lightblue;
+  border-radius: 8px;
+}
+
+button:hover {
+ box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24);
+}
+
+#cocktail-selector{
+  background-color: yellow;
 }
