@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const CocktailSelector = (props) => {
   const options = props.cocktails.map((cocktail, index) => {
-    return <option value={index} key={index}>{cocktail.strDrink}</option>
+    return <option value={cocktail.idDrink} key={index}>{cocktail.strDrink}</option>
   })
 
   function handleChange(event) {

@@ -19,10 +19,10 @@ class CocktailsContainer extends Component{
     .then(data => this.setState({ cocktails: data.drinks }))
   }
 
-  handleCocktailSelected(index){
-    if (this.state.cocktails.length === 0) return null;
-    const selectedCocktail = this.state.cocktails[index];
-    this.setState({ currentCocktail: selectedCocktail })
+  handleCocktailSelected(idDrink){
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`)
+      .then(res=> res.json())
+    .then(data =>this.setState({ currentCocktail: data.drinks[0] }))
   }
 
   render(){
